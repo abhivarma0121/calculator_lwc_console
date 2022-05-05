@@ -1,0 +1,35 @@
+<template>
+     <lightning-card  variant="Narrow"  title="Hello" icon-name="standard:account">
+
+         <template if:true={isSum}>
+                <div class="slds-m-vertical_medium">
+                    Addition of Number is : {calculation}
+                </div>
+            </template>
+            <template if:true={isSub}>
+                <div class="slds-m-vertical_medium">
+                    Subtraction of Number is : {calculation}
+                </div>
+            </template>
+            <template if:true={isMulti}>
+                <div class="slds-m-vertical_medium">
+                    Multiplication of Number is : {calculation}
+                </div>
+            </template>
+            <template if:true={isDivision}>
+                <div class="slds-m-vertical_medium">
+                    Division of Number is : {calculation}
+                </div>
+            </template>
+            
+       
+        <lightning-input type="number" variant="standard" name="name" label="Enter First Number" onchange={changeFirst} ></lightning-input>
+         <lightning-input type="number" variant="standard" name="name" label="Enter second Number" onchange={changeSecond}></lightning-input>
+         <div slot="footer">
+         <lightning-button variant="brand" label="Add Numbers" title="Add Numbers" onclick={addTwoNumbers}></lightning-button>
+         <lightning-button variant="brand" label="Subtract Numbers" title="Subtract Numbers" onclick={subtractTwoNumbers}></lightning-button>
+         <lightning-button variant="brand" label="Multiply Numbers" title="Multiply Numbers" onclick={multiplyTwoNumbers}></lightning-button>
+         <lightning-button variant="brand" label="Divide Numbers" title="Divide Numbers" onclick={divideTwoNumbers}></lightning-button>
+        </div>
+     </lightning-card>
+</template>
